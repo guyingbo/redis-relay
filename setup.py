@@ -6,9 +6,24 @@ import os.path
 import re
 
 
+VERSION_RE = re.compile(r"""__version__ = ['"]([-a-z0-9.]+)['"]""")
+BASE_PATH = os.path.dirname(__file__)
+
+
+with open(os.path.join(BASE_PATH, "redis_relay.py")) as f:
+    try:
+        version = VERSION_RE.search(f.read()).group(1)
+    except IndexError:
+        raise RuntimeError("Unable to determine version.")
+
+
+with open(os.path.join(BASE_PATH, "README.md")) as readme:
+    long_description = readme.read()
+
+
 setup(
     name="redis-relay",
-    description="A useful asynchronous library bases on aiobotocore",
+    description="redis relay for interprocess communication",
     long_description_content_type="text/markdown",
     license="MIT",
     version="0.0.1",
