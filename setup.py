@@ -32,10 +32,9 @@ setup(
     maintainer="Yingbo Gu",
     maintainer_email="tensiongyb@gmail.com",
     py_modules=["redis_relay"],
-    python_requires=">=3.5",
+    python_requires=">=3.6",
     install_requires=["aioredis"],
     classifiers=[
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
