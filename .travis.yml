@@ -9,3 +9,5 @@ script:
   - python setup.py test
 after_success:
   - codecov
+services:
+  - redis-server
