@@ -11,4 +11,6 @@ redis relay for interprocess communication
 
 ## Installation
 
-~~~pip install redis-relay~~~
+~~~
+pip install redis-relay
+~~~
